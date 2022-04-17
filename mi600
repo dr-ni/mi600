@@ -9,7 +9,7 @@ val=W
 # option check
 if [ $# -lt 3 ]
 then
-  echo "Usage: $0 <hostname | ip> <username> <password> [-t]"
+  echo "Usage: $0 <host> <username> <password> [-t]"
   exit 1
 fi
 if [ $# -gt 3 ]

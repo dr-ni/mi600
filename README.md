@@ -1,11 +1,11 @@
 # mi600
 A bash-script for the solar-inverter bosswerk mi600
 
-This is a simple tool for direct data access from the solar-inverter bosswerk mi600. It can read the actual solar power and the cummulative earned energy at the actual day.
+This is a simple command-line tool for direct solar data requests from the inverter Bosswerk mi600. It can read the actual solar power and the cumulative daily earned energy.
 
 ## Requirements
 
-- The curl package must be installed.
+- curl must be installed.
 
 ## Development
 

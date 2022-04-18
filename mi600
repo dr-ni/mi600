@@ -2,17 +2,16 @@
 host=$1
 user=$2
 password=$3
-auth=$2:$3
 dat=webdata_now_p
 val=W
 
 # option check
-if [ $# -lt 3 ]
+if [ $# -lt 1 ]
 then
-  echo "Usage: $0 <host> <username> <password> [-t]"
+  echo "Usage: $0 <host> [-t]"
   exit 1
 fi
-if [ $# -gt 3 ]
+if [ $# -gt 1 ]
 then
   dat=webdata_today_e
   val=kWh
@@ -20,21 +19,21 @@ fi
 ping -c3 $host > /dev/null 2>&1
 if [ $? -eq 0 ]
 then
-  p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
+  p=$(curl -s  "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   if [ "$p" = "" ]
   then
     sleep 1
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
+    p=$(curl -s  "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" = "" ]
   then
     sleep 1
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
+    p=$(curl -s  "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" = "" ]
   then
     sleep 1
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
+    p=$(curl -s  "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" != "" ]
   then

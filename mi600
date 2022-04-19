@@ -20,36 +20,16 @@ val=W
 if [ $# -lt 3 ]
 then
   echo "Usage: $0 <host> <username> [<type>]"
-  echo "Allowed request <type>:"
-  echo "- webdata_sn"
-  echo "- webdata_msvn"
-  echo "- webdata_ssvn"
-  echo "- webdata_pv_type"
-  echo "- webdata_rate_p"
-  echo "- webdata_now_p"
-  echo "- webdata_today_e"
-  echo "- webdata_total_e"
-  echo "- webdata_alarm"
-  echo "- webdata_utime"
-  echo "- cover_mid"
-  echo "- cover_ver"
-  echo "- cover_wmode"
-  echo "- cover_ap_ssid"
-  echo "- cover_ap_ip"
-  echo "- cover_ap_mac"
-  echo "- cover_sta_ssid"
-  echo "- cover_sta_rssi"
-  echo "- cover_sta_ip"
-  echo "- cover_sta_mac"
-  echo "- status_a"
-  echo "- status_b"
-  echo "- status_c"
+  echo "Valid types can be found in man page: 'man mi600'"
   exit 1
 fi
 if [ $# -gt 3 ]
 then
   dat=$4
   val=''
+  [ "$dat" = "webdata_today_e" ] && val=kWh
+  [ "$dat" = "webdata_total_e" ] && val=kWh
+  [ "$dat" = "webdata_now_p" ] && val=W
 fi
 ping -c3 $host > /dev/null 2>&1
 if [ $? -eq 0 ]

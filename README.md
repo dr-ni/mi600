@@ -20,9 +20,7 @@ sudo make uninstall
 ```
 
 ## Usage
-```
-mi600 <hostname | ip> <username> <password> [<type>]
-```
+```mi600 <hostname | ip> <username> <password> [<type>]```
 ## Options
 Allowed request <type>:
 - webdata_sn

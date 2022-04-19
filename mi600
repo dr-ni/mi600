@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# mi600
+# MIT License Copyright (c) 2022 dr-ni
+# https://github.com/dr-ni/mi600
+#
+# A simple bash command-line tool for direct solar data requests
+# to the inverter Bosswerk mi600.
+# It can read the actual solar power and the cumulative daily earned energy.
+#
+# Requirements: curl must be installed.
+#
+#
 host=$1
 user=$2
 password=$3

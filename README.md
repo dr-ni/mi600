@@ -21,8 +21,7 @@ sudo make uninstall
 
 ## Usage
 ```mi600 <hostname | ip> <username> <password> [<type>]```
-### Options
-<type>:
+### \<type\>:
 - webdata_sn
 - webdata_msvn
 - webdata_ssvn

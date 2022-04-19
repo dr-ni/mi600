@@ -1,6 +1,6 @@
 # mi600
 
-This is a simple bash command-line tool for direct solar data requests to the Bosswerk inverter MI600. It can read the actual solar power, cumulative daily earned energy and many other inverter informations.
+This is a simple bash command-line tool for direct solar data requests to the Bosswerk MI600 solar inverter. It can read the actual solar power, cumulative daily earned energy and many other inverter informations.
 
 ## Requirements
 

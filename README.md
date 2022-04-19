@@ -23,7 +23,7 @@ sudo make uninstall
 ```
 mi600 <hostname | ip> <username> <password> [-t]
 ```
-Option -t: total daily earned energy
+- Option -t: total daily earned energy
 
 
 https://github.com/dr-ni/mi600

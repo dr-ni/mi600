@@ -20,7 +20,9 @@ sudo make uninstall
 ```
 
 ## Usage
-```mi600 <hostname | ip> <username> <password> [<type>]```
+```
+mi600 <host> <username> <password> [<type>]
+```
 ### \<type\>:
 - webdata_sn
 - webdata_msvn

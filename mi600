@@ -37,17 +37,17 @@ then
   p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   if [ "$p" = "" ]
   then
-    sleep 1
+    sleep 3
     p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" = "" ]
   then
-    sleep 1
+    sleep 3
     p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" = "" ]
   then
-    sleep 1
+    sleep 3
     p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   fi
   if [ "$p" != "" ]

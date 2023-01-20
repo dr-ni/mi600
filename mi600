@@ -19,7 +19,7 @@ val=W
 # option check
 if [ $# -lt 3 ]
 then
-  echo "Usage: $0 <host> <username> [<type>]"
+  echo "Usage: $0 <host> <username> <password> [<type>]"
   echo "Valid types can be found in man page: 'man mi600'"
   exit 1
 fi

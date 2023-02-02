@@ -31,33 +31,15 @@ then
   [ "$dat" = "webdata_total_e" ] && val=kWh
   [ "$dat" = "webdata_now_p" ] && val=W
 fi
-ping -c3 $host > /dev/null 2>&1
-if [ $? -eq 0 ]
-then
+for i in 1 2 3
+do
   p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
-  if [ "$p" = "" ]
-  then
-    sleep 3
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
-  fi
-  if [ "$p" = "" ]
-  then
-    sleep 3
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
-  fi
-  if [ "$p" = "" ]
-  then
-    sleep 3
-    p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
-  fi
   if [ "$p" != "" ]
   then
     echo "$p $val"
     exit 0
   fi
-  echo "Error: could not read $4"
-  exit 1
-else
-  echo "Error: connection to $host failed"
-  exit 1
-fi
+  sleep 3
+done
+echo "Error: connection to $host failed"
+exit 1

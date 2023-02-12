@@ -14,22 +14,32 @@
 host=$1
 auth=$2:$3
 dat=webdata_now_p
-val=W
+val=''
 
 # option check
 if [ $# -lt 3 ]
 then
-  echo "Usage: $0 <host> <username> <password> [<type>]"
+  echo "Usage: $0 <host> <username> <password> [<type>] [-u]"
   echo "Valid types can be found in man page: 'man mi600'"
+  echo "Option '-u': show unit"
   exit 1
 fi
 if [ $# -gt 3 ]
 then
-  dat=$4
-  val=''
-  [ "$dat" = "webdata_today_e" ] && val=kWh
-  [ "$dat" = "webdata_total_e" ] && val=kWh
-  [ "$dat" = "webdata_now_p" ] && val=W
+  if [ "$4" == "-u" ]
+  then
+    dat=webdata_now_p
+    val=W
+  else
+    dat=$4
+    val=''
+    if [ "$5" == "-u" ]
+    then
+      [ "$dat" = "webdata_today_e" ] && val=kWh
+      [ "$dat" = "webdata_total_e" ] && val=kWh
+      [ "$dat" = "webdata_now_p" ] && val=W
+    fi
+  fi
 fi
 for i in 1 2 3
 do

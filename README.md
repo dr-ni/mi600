@@ -21,9 +21,10 @@ sudo make uninstall
 
 ## Usage
 ```
-mi600 <host> <username> <password> [<type>]
+mi600 <host> <username> <password> [<type>] [-u]
+Option '-u': show unit
 ```
-### \<type\>:
+### \Option 'type':
 - webdata_sn
 - webdata_msvn
 - webdata_ssvn

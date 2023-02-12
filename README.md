@@ -24,7 +24,7 @@ sudo make uninstall
 mi600 <host> <username> <password> [<type>] [-u]
 Option '-u': show unit
 ```
-### \Option 'type':
+### Option 'type':
 - webdata_sn
 - webdata_msvn
 - webdata_ssvn

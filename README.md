@@ -24,6 +24,9 @@ sudo make uninstall
 mi600 <host> <username> <password> [<type>] [-u]
 Option '-u': show unit
 ```
+
+By default the username and password are `admin` and `admin`.
+
 ### Option 'type':
 - webdata_sn
 - webdata_msvn

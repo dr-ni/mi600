@@ -51,5 +51,11 @@ do
   fi
   sleep 3
 done
-echo "Error: connection to $host failed"
+ping -c3 $host > /dev/null 2>&1
+if [ $? -eq 0 ]
+then
+  echo "mi600: could not read value"
+else
+  echo "Error: connection to $host failed"
+fi
 exit 1

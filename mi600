@@ -43,7 +43,7 @@ then
 fi
 for i in 1 2 3
 do
-  p=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
+  p=$((curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}' | sed 's/[[:space:]]*$//'))
   if [ "$p" != "" ]
   then
     echo "$p $val"

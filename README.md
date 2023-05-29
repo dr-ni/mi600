@@ -5,6 +5,8 @@ This is a simple bash command-line tool for direct solar data requests to the Bo
 ## Requirements
 
 - curl must be installed.
+- bc must be installed.
+- sed must be installed.
 
 ## Development
 

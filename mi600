@@ -43,12 +43,12 @@ then
 fi
 for i in 1 2 3
 do
-  o=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}' | sed 's/[[:space:]]*$//')
+  o=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   if [ "$o" != "" ]
   then
     if [[ "$dat" == "webdata_now_p" || "$dat" == "webdata_total_e" || "$dat" == "webdata_today_e" ]]
     then
-      p=$(echo "scale=1; $o/1.0" | bc)
+      p=$(echo "scale=1; $o/1.0" | bc | tr -d ' ')
     else
       p=$(echo "$o")
     fi

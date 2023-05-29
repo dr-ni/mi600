@@ -6,7 +6,7 @@ This is a simple bash command-line tool for direct solar data requests to the Bo
 
 - curl must be installed.
 - bc must be installed.
-- sed must be installed.
+- awk must be installed.
 
 ## Development
 

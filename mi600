@@ -46,9 +46,11 @@ do
   o=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}')
   if [ "$o" != "" ]
   then
-    if [[ "$dat" == "webdata_now_p" || "$dat" == "webdata_total_e" || "$dat" == "webdata_today_e" ]]
+    if [[ "$dat" == "webdata_total_e" || "$dat" == "webdata_today_e" ]]
     then
       p=$(echo "scale=1; $o/1.0" | bc | tr -d ' ')
+    else if [ "$dat" == "webdata_now_p" ]
+      p=$(echo "$o" | tr -d ' ')
     else
       p=$(echo "$o")
     fi

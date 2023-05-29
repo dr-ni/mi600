@@ -43,8 +43,9 @@ then
 fi
 for i in 1 2 3
 do
-  p=$((curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}' | sed 's/[[:space:]]*$//'))
-  if [ "$p" != "" ]
+  o=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}' | sed 's/[[:space:]]*$//')
+  p=$(echo "scale=1; $o/1.0" | bc)
+  if [ "$o" != "" ]
   then
     echo "$p $val"
     exit 0

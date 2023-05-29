@@ -44,9 +44,9 @@ fi
 for i in 1 2 3
 do
   o=$(curl -s -u "$auth" "$host"/status.html | grep "$dat = " | awk -F '"' '{print $2}' | sed 's/[[:space:]]*$//')
-  p=$(echo "scale=1; $o/1.0" | bc)
   if [ "$o" != "" ]
   then
+    p=$(echo "scale=1; $o/1.0" | bc)
     echo "$p $val"
     exit 0
   fi

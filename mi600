@@ -49,7 +49,8 @@ do
     if [[ "$dat" == "webdata_total_e" || "$dat" == "webdata_today_e" ]]
     then
       p=$(echo "scale=1; $o/1.0" | bc | tr -d ' ')
-    else if [ "$dat" == "webdata_now_p" ]
+    elif [ "$dat" == "webdata_now_p" ]
+    then
       p=$(echo "$o" | tr -d ' ')
     else
       p=$(echo "$o")
